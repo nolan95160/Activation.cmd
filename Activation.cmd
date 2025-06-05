@@ -386,7 +386,7 @@ exit /b
 if %_unattended%==0 (
 cls
 if not defined terminal mode 76, 33
-title  TSforge Activation %masver%
+title  Activation Office 2024
 
 echo:
 echo:
