@@ -392,23 +392,11 @@ echo:
 echo:
 echo:
 echo:
-call :dk_color2 %_White% "                    " %_Red% "Appuyez sur 3 pour activer Office"
+call :dk_color2 %_White% "                    " %_Red% "Appuyez sur 1 pour activer Office"
 call :dk_color2 %_White% "                    " %_Red%    "Appuyez sur 0 pour quitter"
 choice /C:12345ABCDE670 /N
 set _el=!errorlevel!
 
-if !_el!==13 exit /b
-if !_el!==12 start %mas%genuine-installation-media & goto :ts_menu
-if !_el!==11 call :ts_remove & cls & goto :ts_menu
-if !_el!==10 cls & setlocal & set "_resall=1"       & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==9  cls & setlocal & set "_actman=1"       & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==8  cls & setlocal & set "_actappx=1"      & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==7  cls & setlocal & set "_actoffhost=1"   & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==6  cls & setlocal & set "_actwinhost=1"   & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==5  cls & setlocal & set "_actwinesuoff=1" & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==4  cls & setlocal & set "_actprojvis=1"   & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==3  cls & setlocal & set "_actwin=1"       & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==2  cls & setlocal & set "_actesu=1"       & call :ts_start & endlocal & cls & goto :ts_menu
 if !_el!==1  cls & setlocal & set "_actoff=1"       & call :ts_start & endlocal & cls & goto :ts_menu
 
 goto :ts_menu
