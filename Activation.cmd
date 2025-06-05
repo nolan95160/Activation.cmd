@@ -394,9 +394,10 @@ echo:
 echo:
 call :dk_color2 %_White% "                    " %_Red% "Appuyez sur 1 pour activer Office"
 call :dk_color2 %_White% "                    " %_Red%    "Appuyez sur 0 pour quitter"
-choice /C:12345ABCDE670 /N
+choice /C:10 /N
 set _el=!errorlevel!
 
+if !_el!==2  exit /b
 if !_el!==1  cls & setlocal & set "_actoff=1"       & call :ts_start & endlocal & cls & goto :ts_menu
 
 goto :ts_menu
