@@ -381,44 +381,6 @@ exit /b
 
 ::========================================================================================================================================
 
-::  Check for updates
-
-set -=
-set old=
-set pingp=
-set upver=%masver:.=%
-
-for %%A in (
-activ%-%ated.win
-mass%-%grave.dev
-) do if not defined pingp (
-for /f "delims=[] tokens=2" %%B in ('ping -n 1 %%A') do (
-if not "%%B"=="" (set old=1& set pingp=1)
-for /f "delims=[] tokens=2" %%C in ('ping -n 1 updatecheck%upver%.%%A') do (
-if not "%%C"=="" set old=
-)
-)
-)
-
-if defined old (
-echo ________________________________________________
-%eline%
-echo Your version of MAS [%masver%] is outdated.
-echo ________________________________________________
-echo:
-if not %_unattended%==1 (
-echo [1] Get Latest MAS
-echo [0] Continue Anyway
-echo:
-call :dk_color %_Green% "Choose a menu option using your keyboard [1,0] :"
-choice /C:10 /N
-if !errorlevel!==2 rem
-if !errorlevel!==1 (start %mas% & exit /b)
-)
-)
-
-::========================================================================================================================================
-
 :ts_menu
 
 if %_unattended%==0 (
@@ -430,7 +392,8 @@ echo:
 echo:
 echo:
 echo:
-call :dk_color2 %_White% "                    " %_Green% "Appuyez sur 3 pour activer Office"
+call :dk_color2 %_White% "                    " %_Red% "Appuyez sur 3 pour activer Office"
+call :dk_color2 %_White% "                    " %_Red%    "Appuyez sur 0 pour quitter"
 choice /C:12345ABCDE670 /N
 set _el=!errorlevel!
 
