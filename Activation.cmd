@@ -407,9 +407,10 @@ if !_el!==7  cls & setlocal & set "_actoffhost=1"   & call :ts_start & endlocal 
 if !_el!==6  cls & setlocal & set "_actwinhost=1"   & call :ts_start & endlocal & cls & goto :ts_menu
 if !_el!==5  cls & setlocal & set "_actwinesuoff=1" & call :ts_start & endlocal & cls & goto :ts_menu
 if !_el!==4  cls & setlocal & set "_actprojvis=1"   & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==3  cls & setlocal & set "_actoff=1"       & call :ts_start & endlocal & cls & goto :ts_menu
+if !_el!==3  cls & setlocal & set "_actwin=1"       & call :ts_start & endlocal & cls & goto :ts_menu
 if !_el!==2  cls & setlocal & set "_actesu=1"       & call :ts_start & endlocal & cls & goto :ts_menu
-if !_el!==1  cls & setlocal & set "_actwin=1"       & call :ts_start & endlocal & cls & goto :ts_menu
+if !_el!==1  cls & setlocal & set "_actoff=1"       & call :ts_start & endlocal & cls & goto :ts_menu
+
 goto :ts_menu
 )
 
